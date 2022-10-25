@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pokedex</title>
+</head>
+<body>
+	<style>
+		body {
+			margin-top: 5vh;
+			margin-left: 15vh;
+			margin-right: 5vh;
+		}
+		img {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		tr {
+			text-align: center;
+		}
+		td {
+			text-align: center;
+		}
+		canvas {
+			margin-top: 5vh;
+			margin-bottom: 5vh; 
+		}
+		h4 {
+			text-align: end;
+			margin-right: 10vh;
+			font-weight: bold;
+		}
+	</style>	
+	<button class="uppercase shadow bg-gray-400 hover:bg-gray-300 text-white uppercase text-sm leading-normal py-3 px-10 rounded" onClick="refreshPage()">Refresh Button</button>
+	<button class="uppercase shadow bg-gray-400 hover:bg-gray-300 text-white uppercase text-sm leading-normal py-3 px-10 rounded" onClick="orderList('asc')">Order ASC</button>
+	<button class="uppercase shadow bg-gray-400 hover:bg-gray-300 text-white uppercase text-sm leading-normal py-3 px-10 rounded" onClick="orderList('des')">Order DES</button>
+	<button class="uppercase shadow bg-gray-400 hover:bg-gray-300 text-white uppercase text-sm leading-normal py-3 px-10 rounded" onClick="showStats()">Stats</button>
+	<input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg pl-25 p-2.5" placeholder="Search Pockemon by name" onkeyup="searchList()" type="text" value="" id="txtSearch" />
+	<h4 id="avarageKG"></h4>
+
+	<div class="chart-container" style="position: relative; width:700px">
+		<canvas id="myChart" style="display: none"></canvas>
+	</div>
+	<table class="w-full" id="resultat"></table>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
